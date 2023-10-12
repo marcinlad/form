@@ -1,2 +1,7 @@
-`pnpm install`
-`pnpm dev`
+```sh
+pnpm install
+```
+
+```sh
+pnpm dev
+```
