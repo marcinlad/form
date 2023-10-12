@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-200;
+}
+
+button {
+  &:before {
+    @apply content-[''] bg-[url('/shop-cart.svg')] bg-no-repeat bg-center mr-2 w-5 h-4 inline-block relative top-[2px];
+  }
+}
