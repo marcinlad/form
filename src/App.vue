@@ -38,14 +38,14 @@ const currentComponentData = computed(() => {
   return currentComponent.value === PersonalInformation ? data.value.userData : data.value.paymentData
 })
 
-const onSubmit = async ($event: { step: string, data: UserData | PaymentData }) => {
-  const step = $event.step
+const onSubmit = async (event: { step: string, data: UserData | PaymentData }) => {
+  const step = event.step
   if (step === 'personal-information') {
     const { default: PaymentsDetails } = await import('./components/PaymentsDetails.vue')
     currentComponent.value = PaymentsDetails
-    data.value.userData = $event.data as UserData
+    data.value.userData = event.data as UserData
   } else if (step === 'payments-details') {
-    data.value.paymentData = $event.data as PaymentData
+    data.value.paymentData = event.data as PaymentData
     console.log({ ...data.value.userData, ...data.value.paymentData })
   }
 }
